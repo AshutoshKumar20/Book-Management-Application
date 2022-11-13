@@ -1,0 +1,26 @@
+{
+  "name": "book-management-application",
+  "version": "1.0.0",
+  "description": "Book record management server created with node.js and express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshutoshKumar20/Book-Management-Application.git"
+  },
+  "author": "Ashutosh Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshutoshKumar20/Book-Management-Application/issues"
+  },
+  "homepage": "https://github.com/AshutoshKumar20/Book-Management-Application#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
