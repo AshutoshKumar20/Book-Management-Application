@@ -15,7 +15,7 @@ const userSchema = new Schema(
         },
 
         email: {
-            type: string,
+            type: String,
             required: true,
         },
         issuedBook: {
