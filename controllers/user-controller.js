@@ -37,13 +37,7 @@ exports.createNewUser = async (req, res) => {
     const { name, surname, email, subscriptionType, subscriptionDate } =
         req.body;
 
-    const newUser = await UserModel.create({
-        name,
-        surname,
-        email,
-        subscriptionDate,
-        subscriptionType,
-    });
+    const newUser = await UserModel.create(data);
 
     return res.status(201).json({
         success: true,
@@ -135,7 +129,7 @@ exports.getSubscriptionDetailsById = async (req, res) => {
     let subscriptionExpiration = subscriptionType(subscriptionDate);
 
     const data = {
-        ...user,
+        ...user._doc,
         subscriptionExpired: subscriptionExpiration < currentDate,
         daysLeftForExpiration:
             subscriptionExpiration <= currentDate

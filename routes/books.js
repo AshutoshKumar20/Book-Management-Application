@@ -1,7 +1,7 @@
 const express = require("express");
 const { books } = require("../data/books.json");
 const { users } = require("../data/users.json");
-const { getAllBooks, getSingleBookById, getAllIssuedBooks, addNewBook, updateBookById } = require("../controllers/book-controller");
+const { getAllBooks, getSingleBookById, getAllIssuedBooks, addNewBook, updateBookById, getSingleBookByName } = require("../controllers/book-controller");
 
 
 const router = express.Router();
@@ -25,6 +25,8 @@ router.get("/", getAllBooks);
  */
 
 router.get("/:id", getSingleBookById);
+
+router.get("/getbook/name/:name", getSingleBookByName);
 
 /**
  * Route: /books/issued/by-user 

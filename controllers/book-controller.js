@@ -16,7 +16,28 @@ exports.getAllBooks = async (req, res) => {
 exports.getSingleBookById = async (req, res) => {
     const { id } = req.params;
 
-    const book = await BookModel.findById({ id });
+    const book = await BookModel.findById(id);
+
+    if (!book)
+        return res.status(404).json({
+            success: false,
+            message: "Book not found",
+        });
+
+    return res.status(200).json({
+        success: true,
+        data: book,
+    });
+};
+
+//Additional Route
+
+exports.getSingleBookByName = async (req, res) => {
+    const { name } = req.params;
+
+    const book = await BookModel.findOne({
+        name: name,
+    });
 
     if (!book)
         return res.status(404).json({
